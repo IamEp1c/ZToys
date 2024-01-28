@@ -1,0 +1,16 @@
+<div class="app-toy-list">
+<p>toy-list works!</p>
+<table>
+ <th>Name</th>   
+ <th>Description</th>
+</table>
+
+<tr *ngFor="let toy of toys">
+    <td>{{toy.id}}</td>
+    <td>{{toy.name}}</td>
+    <td>{{toy.description}}</td>
+</tr>
+
+<button (click)="postToys()">Click here to make a new toy</button>
+
+</div>
