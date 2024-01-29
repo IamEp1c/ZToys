@@ -7,6 +7,7 @@ import { ToyListComponent } from './toy-list/toy-list.component';
 import { ZToysService } from './ztoys.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddToyComponent } from './add-toy/add-toy.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AddToyComponent } from './add-toy/add-toy.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ZToysService],
   bootstrap: [AppComponent]

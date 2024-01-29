@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ToyListComponent } from './toy-list/toy-list.component';
+import { ZToysService } from './ztoys.service';
+import { ZToys } from './ZToys';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +10,6 @@ import { ToyListComponent } from './toy-list/toy-list.component';
 })
 export class AppComponent {
   title = 'Zayan ToyBox';
+
+
 }

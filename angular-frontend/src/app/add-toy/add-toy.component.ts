@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ZToysService } from '../ztoys.service';
 import { ZToys } from '../ZToys';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-add-toy',
@@ -9,14 +10,21 @@ import { ZToys } from '../ZToys';
 })
 export class AddToyComponent implements OnInit {
 
-  ztoys: ZToys = null; 
+
+ // ztoys: ZToys = null; 
 
   private url: string = 'http://localhost:8080/toys'; 
 
-  constructor(private toyService: ZToysService) {}
+  toys: any
 
-  ngOnInit(): void {
-    this.toyService.postToys<ztoys>(this.url)
+  constructor(private toyService: ZToysService){
+
+  }
+
+  getToyFormData(data:any){
+    this.toyService.postToys(data).subscribe((result)=> {
+      console.warn(result); 
+    })
   }
 
 
