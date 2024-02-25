@@ -8,7 +8,7 @@ import {NgForm} from '@angular/forms';
   templateUrl: './add-toy.component.html',
   styleUrl: './add-toy.component.css'
 })
-export class AddToyComponent implements OnInit {
+export class AddToyComponent {
 
 
  // ztoys: ZToys = null; 
@@ -20,11 +20,18 @@ export class AddToyComponent implements OnInit {
   constructor(private toyService: ZToysService){
 
   }
+ 
 
   getToyFormData(data:any){
     this.toyService.postToys(data).subscribe((result)=> {
-      console.warn(result); 
+      this.toys = result; 
+      console.log(this.toys); 
+      //console.warn(result); 
     })
+  }
+
+  onClick(){
+   console.log("koi nayh jatt a"); 
   }
 
 

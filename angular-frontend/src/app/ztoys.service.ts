@@ -20,7 +20,7 @@ export class ZToysService {
   }
 
   postToys(ztoys: ZToys): Observable<ZToys>{
-    console.log("hello world"); 
+    console.log("koi nayh jatt a"); 
     return this.http.post<ZToys>(this.url, ztoys)
     // add code later here to handle errors in case a toy is not able to be added
   }
