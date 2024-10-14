@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ZToysService } from '../ztoys.service';
 import { ZToys } from '../ZToys';
 import {NgForm} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { catchError, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-add-toy',
@@ -16,8 +18,10 @@ export class AddToyComponent {
   private url: string = 'http://localhost:8080/toys'; 
 
   toys: any
+  handleError: any;
+  
 
-  constructor(private toyService: ZToysService){
+  constructor(private toyService: ZToysService, private http: HttpClient){
 
   }
  
@@ -30,9 +34,32 @@ export class AddToyComponent {
     })
   }
 
-  onClick(){
-   console.log("koi nayh jatt a"); 
+
+  // getToyFormData(form: NgForm) {
+  //   if (form.valid) { // Check if the form is valid
+  //     this.toyService.postToys(form.value).subscribe(
+  //       (result) => {
+  //         this.toys = result;
+  //         console.log(this.toys);
+  //         form.reset(); // Reset the form after successful submission
+  //       },
+  //       (error) => {
+  //         console.error('Error occurred while saving the toy:', error);
+  //       }
+  //     );
+  //   } else {
+  //     console.warn('Form is invalid');
+  //   }
+  // }
+
+
+
+  onClick(form: NgForm){
+  //  this.getToyFormData(form)
+  this.toyService.postToys(this.toys).subscribe(toy => this.toy.)
   }
+
+  
 
 
 

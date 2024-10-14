@@ -1,5 +1,5 @@
 <h3>Create a toy</h3>
-<form #toyForm="ngForm" (ngSubmit)="getToyFormData(toyForm.value)">
+<form #toyForm="ngForm" (ngSubmit)="onClick(toyForm)">
 <label>Toy Name</label>
 <input type="text" name="toyName" ngModel>
 <label>Toy Description</label>
